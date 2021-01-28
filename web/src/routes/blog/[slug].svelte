@@ -5,10 +5,9 @@
 		const { slug } = params
 		const query = `*[slug.current == "${slug}"]`;
 		
-		const res = await client.fetch(query).then(data => {
-            post = data[0];
-        });
-    return { post };
+		const res = await client.fetch(query)
+		return { post } = await res.shift();
+    
 	}
 </script>
 

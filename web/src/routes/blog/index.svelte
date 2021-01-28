@@ -2,12 +2,9 @@
 	import { client } from '../../components/sanityClient'
 	let posts
 	export async function preload() {
-		const query = "*[_type == 'post']{_id, publishedAt, slug, title}";
-		
-		const res = await client.fetch(query).then(data => {
-            posts = data;
-        });
-    return { posts };
+		const query = "*[_type == 'post']{_id, slug, title}";
+	
+    return { posts } = await client.fetch(query);
 	}
 </script>
 <script lang="ts">
